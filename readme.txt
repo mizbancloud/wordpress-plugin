@@ -1,7 +1,7 @@
 === MizbanCloud CDN ===
 Contributors: mizbancloud
 Donate link: https://mizbancloud.com
-Tags: cdn, cache, performance, speed, optimization, mizbancloud, cloudflare alternative, persian cdn, iran cdn
+Tags: cdn, cache, performance, mizbancloud, optimization
 Requires at least: 5.0
 Tested up to: 6.9
 Requires PHP: 7.4

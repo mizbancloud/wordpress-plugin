@@ -241,9 +241,9 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Permission denied.', 'mizbancloud-cdn')));
         }
 
-        $api_token = isset($_POST['api_token']) ? sanitize_text_field($_POST['api_token']) : '';
+        $api_token = isset($_POST['api_token']) ? sanitize_text_field(wp_unslash($_POST['api_token'])) : '';
         $domain_id = isset($_POST['domain_id']) ? absint($_POST['domain_id']) : '';
-        $domain_name = isset($_POST['domain_name']) ? sanitize_text_field($_POST['domain_name']) : '';
+        $domain_name = isset($_POST['domain_name']) ? sanitize_text_field(wp_unslash($_POST['domain_name'])) : '';
 
         $options = array(
             'api_token' => $api_token,
@@ -271,7 +271,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $mode = isset($_POST['mode']) ? sanitize_text_field($_POST['mode']) : '';
+        $mode = isset($_POST['mode']) ? sanitize_text_field(wp_unslash($_POST['mode'])) : '';
         $allowed_modes = array('WITH_QUERY_STRING', 'NO_QUERY_STRING', 'OFF');
 
         if (!in_array($mode, $allowed_modes)) {
@@ -330,7 +330,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $mode = isset($_POST['mode']) ? sanitize_text_field($_POST['mode']) : 'OFF';
+        $mode = isset($_POST['mode']) ? sanitize_text_field(wp_unslash($_POST['mode'])) : 'OFF';
 
         $api = $this->get_api();
         $response = $api->set_developer_mode($options['domain_id'], $mode);
@@ -357,7 +357,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $mode = isset($_POST['mode']) ? sanitize_text_field($_POST['mode']) : 'OFF';
+        $mode = isset($_POST['mode']) ? sanitize_text_field(wp_unslash($_POST['mode'])) : 'OFF';
 
         $api = $this->get_api();
         $response = $api->set_always_online($options['domain_id'], $mode);
@@ -384,8 +384,8 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $type = isset($_POST['type']) ? sanitize_text_field($_POST['type']) : '';
-        $value = isset($_POST['value']) ? sanitize_text_field($_POST['value']) : '';
+        $type = isset($_POST['type']) ? sanitize_text_field(wp_unslash($_POST['type'])) : '';
+        $value = isset($_POST['value']) ? sanitize_text_field(wp_unslash($_POST['value'])) : '';
 
         $api = $this->get_api();
 
@@ -420,7 +420,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $mode = isset($_POST['mode']) ? sanitize_text_field($_POST['mode']) : 'OFF';
+        $mode = isset($_POST['mode']) ? sanitize_text_field(wp_unslash($_POST['mode'])) : 'OFF';
 
         $api = $this->get_api();
         $response = $api->set_image_optimization($options['domain_id'], $mode);
@@ -447,7 +447,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $mode = isset($_POST['mode']) ? sanitize_text_field($_POST['mode']) : 'OFF';
+        $mode = isset($_POST['mode']) ? sanitize_text_field(wp_unslash($_POST['mode'])) : 'OFF';
 
         $api = $this->get_api();
         $response = $api->set_image_resize($options['domain_id'], $mode);
@@ -554,7 +554,7 @@ class MizbanCloud_CDN {
             wp_send_json_error(array('message' => __('Please select a domain first.', 'mizbancloud-cdn')));
         }
 
-        $paths_input = isset($_POST['paths']) ? sanitize_textarea_field($_POST['paths']) : '';
+        $paths_input = isset($_POST['paths']) ? sanitize_textarea_field(wp_unslash($_POST['paths'])) : '';
 
         if (empty($paths_input)) {
             wp_send_json_error(array('message' => __('Please enter at least one path to purge.', 'mizbancloud-cdn')));
