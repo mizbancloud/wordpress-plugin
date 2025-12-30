@@ -3,7 +3,7 @@
  * MizbanCloud CDN WordPress Plugin
  *
  * Plugin Name:     MizbanCloud CDN
- * Plugin URI:      https://mizbancloud.com
+ * Plugin URI:      https://github.com/mizbancloud/wordpress-plugin
  * Description:     WordPress Plugin for MizbanCloud CDN Management - Manage your CDN settings directly from WordPress admin panel
  * Author:          MizbanCloud
  * Author URI:      https://mizbancloud.com
