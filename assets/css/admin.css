@@ -1,0 +1,462 @@
+/**
+ * MizbanCloud CDN Admin Styles
+ *
+ * @package MizbanCloudCDN
+ */
+
+/* Main Container */
+.mc-cdn-wrap {
+    max-width: 1200px;
+    margin: 20px 20px 20px 0;
+}
+
+.mc-cdn-wrap h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 23px;
+    font-weight: 400;
+    margin: 0 0 20px;
+    padding: 9px 0 4px;
+    line-height: 1.3;
+}
+
+.mc-cdn-wrap h1 .dashicons {
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+    color: #2271b1;
+}
+
+.mc-cdn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Sections */
+.mc-cdn-section {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.mc-cdn-section h2 {
+    margin: 0 0 20px;
+    padding: 0 0 15px;
+    border-bottom: 1px solid #f0f0f1;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1d2327;
+}
+
+/* Fields */
+.mc-cdn-field {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.mc-cdn-field:last-child {
+    margin-bottom: 0;
+}
+
+.mc-cdn-field > label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1d2327;
+}
+
+.mc-cdn-field input[type="text"],
+.mc-cdn-field input[type="password"],
+.mc-cdn-field input[type="number"],
+.mc-cdn-field select {
+    width: 100%;
+    max-width: 400px;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mc-cdn-field input[type="number"].small-text {
+    width: 120px;
+}
+
+.mc-cdn-field input:focus,
+.mc-cdn-field select:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+.mc-cdn-field .description {
+    margin-top: 8px;
+    color: #646970;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Token Toggle Button */
+#mc-toggle-token {
+    position: absolute;
+    right: calc(100% - 430px);
+    top: 32px;
+    padding: 6px 8px;
+    min-height: auto;
+    line-height: 1;
+}
+
+#mc-toggle-token .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Button Groups */
+.mc-cdn-button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.mc-cdn-button-group .button {
+    min-width: 120px;
+}
+
+/* Actions */
+.mc-cdn-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f1;
+    margin-top: 20px;
+}
+
+.mc-cdn-actions .button-primary {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mc-cdn-actions .button-primary .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Status Messages */
+.mc-status {
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.mc-status.success {
+    color: #00a32a;
+}
+
+.mc-status.error {
+    color: #d63638;
+}
+
+/* Loading */
+.mc-cdn-loading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    color: #646970;
+}
+
+.mc-cdn-loading .spinner {
+    float: none;
+    margin: 0;
+}
+
+/* Toggle Switch */
+.mc-cdn-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mc-cdn-toggle {
+    position: relative;
+    display: inline-block;
+    width: 48px;
+    height: 24px;
+}
+
+.mc-cdn-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.mc-cdn-toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.3s;
+    border-radius: 24px;
+}
+
+.mc-cdn-toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.mc-cdn-toggle input:checked + .mc-cdn-toggle-slider {
+    background-color: #2271b1;
+}
+
+.mc-cdn-toggle input:focus + .mc-cdn-toggle-slider {
+    box-shadow: 0 0 0 2px rgba(34, 113, 177, 0.3);
+}
+
+.mc-cdn-toggle input:checked + .mc-cdn-toggle-slider:before {
+    transform: translateX(24px);
+}
+
+.mc-cdn-toggle input:disabled + .mc-cdn-toggle-slider {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.mc-cdn-toggle-label {
+    font-weight: 500;
+    color: #646970;
+    min-width: 30px;
+}
+
+/* Notices */
+#mc-cdn-notices {
+    margin-top: 20px;
+}
+
+#mc-cdn-notices .notice {
+    margin: 0;
+}
+
+/* Spin Animation */
+@keyframes mc-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.mc-spin {
+    animation: mc-spin 1s linear infinite;
+}
+
+/* Refresh Button */
+#mc-refresh-domains {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+#mc-refresh-domains .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Domain Select */
+#mc-domain-select {
+    vertical-align: middle;
+}
+
+/* Responsive */
+@media screen and (max-width: 782px) {
+    .mc-cdn-wrap {
+        margin-right: 10px;
+    }
+
+    .mc-cdn-field input[type="text"],
+    .mc-cdn-field input[type="password"],
+    .mc-cdn-field input[type="number"],
+    .mc-cdn-field select {
+        max-width: 100%;
+    }
+
+    #mc-toggle-token {
+        right: 10px;
+    }
+
+    .mc-cdn-button-group {
+        flex-direction: column;
+    }
+
+    .mc-cdn-button-group .button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mc-cdn-actions {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* RTL Support */
+html[dir="rtl"] .mc-cdn-wrap {
+    margin: 20px 0 20px 20px;
+}
+
+html[dir="rtl"] #mc-toggle-token {
+    right: auto;
+    left: calc(100% - 430px);
+}
+
+html[dir="rtl"] #mc-refresh-domains {
+    margin-left: 0;
+    margin-right: 10px;
+}
+
+html[dir="rtl"] .mc-cdn-toggle-slider:before {
+    left: auto;
+    right: 3px;
+}
+
+html[dir="rtl"] .mc-cdn-toggle input:checked + .mc-cdn-toggle-slider:before {
+    transform: translateX(-24px);
+}
+
+/* Additional Section Styles */
+.mc-cdn-cache-section,
+.mc-cdn-browser-section,
+.mc-cdn-acceleration-section {
+    border-left: 4px solid #2271b1;
+}
+
+.mc-cdn-api-section {
+    border-left: 4px solid #00a32a;
+}
+
+.mc-cdn-purge-section {
+    border-left: 4px solid #d63638;
+}
+
+/* Purge Cache Styles */
+.mc-cdn-purge-options {
+    margin-top: 15px;
+}
+
+.mc-cdn-purge-paths textarea {
+    margin-bottom: 10px;
+    font-family: Consolas, Monaco, monospace;
+}
+
+.mc-button-danger {
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    color: #fff !important;
+}
+
+.mc-button-danger:hover,
+.mc-button-danger:focus {
+    background: #b32d2e !important;
+    border-color: #b32d2e !important;
+    color: #fff !important;
+}
+
+.mc-button-danger:disabled {
+    background: #d63638 !important;
+    border-color: #d63638 !important;
+    opacity: 0.6;
+}
+
+.mc-button-danger .dashicons {
+    color: #fff;
+}
+
+#mc-purge-all,
+#mc-purge-paths-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#mc-purge-all .dashicons,
+#mc-purge-paths-btn .dashicons {
+    font-size: 16px;
+    width: 16px;
+    height: 16px;
+}
+
+/* Card Grid for Future Use */
+.mc-cdn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Info Box */
+.mc-cdn-info {
+    background: #f0f6fc;
+    border: 1px solid #c5d9ed;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.mc-cdn-info .dashicons {
+    color: #2271b1;
+    flex-shrink: 0;
+}
+
+.mc-cdn-info p {
+    margin: 0;
+    color: #1d2327;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Warning Box */
+.mc-cdn-warning {
+    background: #fcf9e8;
+    border: 1px solid #dba617;
+    border-radius: 4px;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.mc-cdn-warning .dashicons {
+    color: #dba617;
+    flex-shrink: 0;
+}
+
+.mc-cdn-warning p {
+    margin: 0;
+    color: #1d2327;
+    font-size: 13px;
+    line-height: 1.5;
+}
